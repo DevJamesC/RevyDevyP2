@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {}
+    "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
+    "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+        "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj",
         "projectName": "StockJocky.Domain",
-        "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+        "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj",
         "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\obj\\",
+        "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",

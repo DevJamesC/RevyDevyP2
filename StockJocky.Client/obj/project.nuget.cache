@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MQSWRo1IFM5lXlja4LoyS+JfaWaqwMH6cjkNzfLp4wZ6Rp6AocmAuEhCbpv8gmjOVHhqHkpwzVXQyabF9uIoRA==",
+  "dgSpecHash": "2P3KfDQnHUP+rv9WUtu4UoVltiCX3ot5lgEAxtHdKai4+fjWCeRQGtNuWQmSUZKcsHbILc+1SibjPIlZjn//Ww==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj",
+  "projectFilePath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Client\\StockJocky.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jkc36\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Jkc36\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

@@ -6243,7 +6243,7 @@
       "StockJocky.Domain >= 1.0.0",
       "microsoft.entityframeworkcore >= 3.1.7",
       "microsoft.entityframeworkcore.design >= 3.1.7",
-      "microsoft.entityframeworkcore.sqlserver >= *"
+      "microsoft.entityframeworkcore.sqlserver >= 3.1.7"
     ]
   },
   "packageFolders": {
@@ -6252,11 +6252,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj",
+      "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Storing\\StockJocky.Storing.csproj",
       "projectName": "StockJocky.Storing",
-      "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj",
+      "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Storing\\StockJocky.Storing.csproj",
       "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\obj\\",
+      "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Storing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6272,8 +6272,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
-              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj"
+            "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
+              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj"
             }
           }
         }
@@ -6305,7 +6305,7 @@
           },
           "microsoft.entityframeworkcore.sqlserver": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.7, )"
           }
         },
         "imports": [

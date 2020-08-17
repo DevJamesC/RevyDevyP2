@@ -1498,7 +1498,9 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
-          "StockJocky.Domain": "1.0.0"
+          "StockJocky.Domain": "1.0.0",
+          "microsoft.entityframeworkcore": "3.1.7",
+          "microsoft.entityframeworkcore.sqlserver": "3.1.7"
         },
         "compile": {
           "bin/placeholder/StockJocky.Storing.dll": {}
@@ -5716,7 +5718,7 @@
       "StockJocky.Storing >= 1.0.0",
       "microsoft.entityframeworkcore >= 3.1.7",
       "microsoft.entityframeworkcore.design >= 3.1.7",
-      "microsoft.entityframeworkcore.sqlserver >= *"
+      "microsoft.entityframeworkcore.sqlserver >= 3.1.7"
     ]
   },
   "packageFolders": {
@@ -5725,11 +5727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj",
+      "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Client\\StockJocky.Client.csproj",
       "projectName": "StockJocky.Client",
-      "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj",
+      "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Client\\StockJocky.Client.csproj",
       "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\obj\\",
+      "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5745,11 +5747,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
-              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj"
+            "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
+              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Domain\\StockJocky.Domain.csproj"
             },
-            "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj": {
-              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj"
+            "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Storing\\StockJocky.Storing.csproj": {
+              "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\RevyDevyP2\\StockJocky.Storing\\StockJocky.Storing.csproj"
             }
           }
         }
@@ -5775,7 +5777,7 @@
           },
           "microsoft.entityframeworkcore.sqlserver": {
             "target": "Package",
-            "version": "[*, )"
+            "version": "[3.1.7, )"
           }
         },
         "imports": [
