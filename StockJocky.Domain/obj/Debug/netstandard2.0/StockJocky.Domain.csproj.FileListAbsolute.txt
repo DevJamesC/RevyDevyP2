@@ -1,9 +1,0 @@
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/bin/Debug/netstandard2.0/StockJocky.Domain.deps.json
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/bin/Debug/netstandard2.0/StockJocky.Domain.dll
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/bin/Debug/netstandard2.0/StockJocky.Domain.pdb
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.csprojAssemblyReference.cache
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.AssemblyInfoInputs.cache
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.AssemblyInfo.cs
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.csproj.CoreCompileInputs.cache
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.dll
-/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/Debug/netstandard2.0/StockJocky.Domain.pdb
