@@ -1,8 +1,16 @@
 namespace StockJocky.Domain.Models
 {
-    public class Stock
-    {
-        public string symbol { get; set; }
-        public string companyName { get; set; }
-    }
+	public class Stock 
+	{
+		public int Id {get; set;}
+		public string Name {get; set;}
+
+		public string Symbol {get; set;}
+
+		public decimal Price {get; set;}
+
+		public decimal PriceChange {get; set;}
+
+		public double PercentChange {get; set;}
+	}
 }
