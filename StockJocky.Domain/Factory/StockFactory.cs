@@ -9,7 +9,7 @@ namespace StockJocky.Domain.Factory
     {
         public async Task<Stock> LoadStock()
         {
-            string url = "https://api.iextrading.com/1.0/stock/msft/quote";
+            string url = "https://cloud.iexapis.com/stable/stock/msft/quote?token=pk_47017819d55f4fa387ee42458b6a4dd5&symbols=msft";
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
