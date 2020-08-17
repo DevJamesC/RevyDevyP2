@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "8lqQ0WlCZOjoJ0sr7iG4EUV3EX7f9OYK49XAzSRLCmzQkuLAjQ6EWzKvks0IATEnwdgn3CW44Qw8SGfgE3c76Q==",
+  "dgSpecHash": "F2xc2H4o6+21cKyC9pKhhWmwgFcuYyz1S1SxTPcsXgaeneUcEKX7pgkknbkQVFXv98pjigUeFQ8+ydQRBZG3BQ==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+  "projectFilePath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jkc36\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Jkc36\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "/home/hop/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/hop/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
   ],
   "logs": []
 }

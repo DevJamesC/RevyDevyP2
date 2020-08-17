@@ -180,26 +180,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Jkc36\\.nuget\\packages\\": {}
+    "/home/hop/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+      "projectUniqueName": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
       "projectName": "StockJocky.Domain",
-      "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
-      "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-      "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\obj\\",
+      "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
+      "packagesPath": "/home/hop/.nuget/packages/",
+      "outputPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/hop/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -233,7 +231,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
       }
     }
   }
