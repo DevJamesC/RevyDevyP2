@@ -1,37 +1,35 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj": {}
+    "/home/hop/revature/RevyDevyP2/StockJocky.Client/StockJocky.Client.csproj": {}
   },
   "projects": {
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj": {
+    "/home/hop/revature/RevyDevyP2/StockJocky.Client/StockJocky.Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj",
+        "projectUniqueName": "/home/hop/revature/RevyDevyP2/StockJocky.Client/StockJocky.Client.csproj",
         "projectName": "StockJocky.Client",
-        "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\StockJocky.Client.csproj",
-        "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Client\\obj\\",
+        "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Client/StockJocky.Client.csproj",
+        "packagesPath": "/home/hop/.nuget/packages/",
+        "outputPath": "/home/hop/revature/RevyDevyP2/StockJocky.Client/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/hop/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
-                "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj"
+              "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj": {
+                "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj"
               },
-              "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj": {
-                "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj"
+              "/home/hop/revature/RevyDevyP2/StockJocky.Storing/StockJocky.Storing.csproj": {
+                "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Storing/StockJocky.Storing.csproj"
               }
             }
           }
@@ -45,6 +43,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
             "microsoft.entityframeworkcore": {
               "target": "Package",
               "version": "[3.1.7, )"
@@ -57,7 +63,7 @@
             },
             "microsoft.entityframeworkcore.sqlserver": {
               "target": "Package",
-              "version": "[*, )"
+              "version": "[3.1.7, )"
             }
           },
           "imports": [
@@ -78,28 +84,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
+    "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+        "projectUniqueName": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
         "projectName": "StockJocky.Domain",
-        "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
-        "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\obj\\",
+        "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
+        "packagesPath": "/home/hop/.nuget/packages/",
+        "outputPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/hop/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -116,11 +120,19 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [
@@ -133,35 +145,33 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj": {
+    "/home/hop/revature/RevyDevyP2/StockJocky.Storing/StockJocky.Storing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj",
+        "projectUniqueName": "/home/hop/revature/RevyDevyP2/StockJocky.Storing/StockJocky.Storing.csproj",
         "projectName": "StockJocky.Storing",
-        "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\StockJocky.Storing.csproj",
-        "packagesPath": "C:\\Users\\Jkc36\\.nuget\\packages\\",
-        "outputPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Storing\\obj\\",
+        "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Storing/StockJocky.Storing.csproj",
+        "packagesPath": "/home/hop/.nuget/packages/",
+        "outputPath": "/home/hop/revature/RevyDevyP2/StockJocky.Storing/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Jkc36\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/hop/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj": {
-                "projectPath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj"
+              "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj": {
+                "projectPath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj"
               }
             }
           }
@@ -180,6 +190,20 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "microsoft.entityframeworkcore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "microsoft.entityframeworkcore.design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "microsoft.entityframeworkcore.sqlserver": {
+              "target": "Package",
+              "version": "[3.1.7, )"
             }
           },
           "imports": [
@@ -192,7 +216,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.302/RuntimeIdentifierGraph.json"
         }
       }
     }

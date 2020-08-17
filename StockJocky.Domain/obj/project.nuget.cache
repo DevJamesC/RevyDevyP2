@@ -1,11 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "8lqQ0WlCZOjoJ0sr7iG4EUV3EX7f9OYK49XAzSRLCmzQkuLAjQ6EWzKvks0IATEnwdgn3CW44Qw8SGfgE3c76Q==",
+  "dgSpecHash": "llp7WCx2/mWTqgl+BL58JGMDQ5adqcxTRNTMEXeEPn9NuGugns2CwBEwtdM0DjYBMqm1neJgzATgeRs4NnFX+g==",
   "success": true,
-  "projectFilePath": "D:\\VisualStudioProjects\\Revature\\proj2\\StockJocky.Domain\\StockJocky.Domain.csproj",
+  "projectFilePath": "/home/hop/revature/RevyDevyP2/StockJocky.Domain/StockJocky.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jkc36\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Jkc36\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+    "/home/hop/.nuget/packages/microsoft.aspnet.webapi.client/5.2.7/microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "/home/hop/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/hop/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/home/hop/.nuget/packages/newtonsoft.json/12.0.3/newtonsoft.json.12.0.3.nupkg.sha512",
+    "/home/hop/.nuget/packages/newtonsoft.json.bson/1.0.1/newtonsoft.json.bson.1.0.1.nupkg.sha512"
   ],
   "logs": []
 }
