@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "5mCSkOtfDvI9nIZMs/NQomhsdfkow/HNgocRN8R0AO+BWL/YR+f9gXTn7NsdJqg1d6NCHWHvsSiaLdX1QQh5eQ==",
+  "dgSpecHash": "vK7w5xLxR4L2SyxK2FGv2SohAczTAIdgVGO6/foUMxlB3TsgTu7k4O/ZVl9c9NnITVR3UFvhh358slKAiibkNw==",
   "success": true,
   "projectFilePath": "/home/hop/revature/RevyDevyP2/StockJocky.Testing/StockJocky.Testing.csproj",
   "expectedPackageFiles": [
-    "/home/hop/.nuget/packages/coverlet.collector/1.2.0/coverlet.collector.1.2.0.nupkg.sha512",
+    "/home/hop/.nuget/packages/coverlet.collector/1.3.0/coverlet.collector.1.3.0.nupkg.sha512",
+    "/home/hop/.nuget/packages/coverlet.msbuild/2.9.0/coverlet.msbuild.2.9.0.nupkg.sha512",
     "/home/hop/.nuget/packages/microsoft.aspnet.webapi.client/5.2.7/microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "/home/hop/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.1/microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "/home/hop/.nuget/packages/microsoft.bcl.hashcode/1.1.0/microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
