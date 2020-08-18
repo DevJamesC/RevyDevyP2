@@ -17,7 +17,7 @@ namespace StockJocky.Testing
 
             Stock msft = await sf.LoadStock();
 
-            Assert.Equal("MSFT", msft.symbol);
+            Assert.Equal("MSFT", msft.Symbol);
         }
     }
 }
