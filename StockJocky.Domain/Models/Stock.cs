@@ -12,5 +12,12 @@ namespace StockJocky.Domain.Models
 		public decimal PriceChange {get; set;}
 
 		public double PercentChange {get; set;}
+
+		public int Quantity {get; set;} //To be used if we implement Stock Trading Game feature. 
+
+		public Stock() 
+		{
+
+		}
 	}
 }
