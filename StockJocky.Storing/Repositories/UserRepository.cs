@@ -5,11 +5,11 @@ using System.Text;
 
 namespace StockJocky.Storing.Repositories
 {
-	public class StockJockyRepository
+	public class UserRepository
 	{
 		private StockDbContext _db;
 
-		public StockJockyRepository(StockDbContext context) 
+		public UserRepository(StockDbContext context) 
 		{
       		_db = context;
     	}
