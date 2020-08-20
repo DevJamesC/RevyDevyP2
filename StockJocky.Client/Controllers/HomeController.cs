@@ -23,13 +23,45 @@ namespace StockJocky.Client.Controllers
         {
             //remove once user constructor is in
             userViewModel.User = new User();
-            userViewModel.User.Stocks= new List<Stock>();
-            //remove once stock getting logic is implimented
-            userViewModel.User.Stocks.Add(new Stock(){Symbol="tst1",Price=1,PercentChange=.1,Name="Test One"});
-            userViewModel.User.Stocks.Add(new Stock(){Symbol="tst2",Price=2,PercentChange=.2,Name="Test Two"});
-            userViewModel.User.Stocks.Add(new Stock(){Symbol="tst3",Price=3,PercentChange=.3,Name="Test Three"});
-            
+            userViewModel.User.Stocks = new List<Stock>();
+
+
             return View(userViewModel);
+        }
+
+
+            [HttpPost]
+        public IActionResult Authenticate(UserViewModel userViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                //perform some logic in domain to confirm user exists and get the relevent info
+                if (true) //if user exists
+                {
+
+                    //remove once stock getting logic is implimented
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", Price = 1, PercentChange = .1, Name = "Test One" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", Price = 2, PercentChange = .2, Name = "Test Two" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", Price = 3, PercentChange = .3, Name = "Test Three" });
+                    //get user stocklist stocks, then...
+                    return View("StockList", userViewModel);
+                }
+                else // if user does not exist
+                {
+                    return View("Index");
+                }
+
+            }
+            else
+            {
+                return View("Index");
+            }
+        }
+
+        public IActionResult AddStock(UserViewModel userViewModel)
+        {
+            //perform logic to find SymbolAdd as a stock, and add it to User's Stocklist
+            return View("StockList",userViewModel);
         }
 
         public IActionResult Privacy()

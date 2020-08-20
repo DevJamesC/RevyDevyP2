@@ -2,8 +2,7 @@
 @model UserViewModel
 
 <h2>Login</h2>
-<form method="GET" action="~/Home/StockList">
-
+<form method="Post" asp-controller="Home" asp-action="Authenticate">
 @Html.HiddenFor(m => m.User)
 @Html.HiddenFor(m => m.User.Username)
 @Html.HiddenFor(m => m.User.Stocks)
@@ -17,17 +16,18 @@
     @Html.HiddenFor(m => m.User.Stocks[i].Symbol)
 }
 
-<label for="un">Username:</label>
-  <input type="text" id="un" name="un"><br><br>
+<label for="un" >Username</label>
+<input type="text" id="un" name="un" asp-for="User.Username" ><br><br>
 
 <button type="submit">Login</button>
 
 <br><br>
 
 </form>
-
+@*
 <form method="GET" action="~/Home/Register">
 
 
 <button type="submit">Register</button>
 </form>
+*@

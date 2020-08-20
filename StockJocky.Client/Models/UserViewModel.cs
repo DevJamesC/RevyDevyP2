@@ -7,6 +7,8 @@ namespace StockJocky.Client.Models
     {
        public User User { get; set; }
 
+       public string SymbolAdd {get; set;}
+
        public UserViewModel()
        {
            User = new UserFactory().Create();
