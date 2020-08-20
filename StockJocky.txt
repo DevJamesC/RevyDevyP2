@@ -1,7 +1,4 @@
-Stock Jock's mission is to democratize finance for all. 
-We believe that everyone should have access to the financial markets, 
-so we’ve built Stock Jock from a perspective that makes the idea of investing friendly, 
-approachable, and understandable for newcomers and experts alike.
-Our goal is to build a product that provides everyone with access to the financial markets, 
-not just the wealthy. The creation of Stock Jock hopes to leverage technology in such a way as to 
-encourage everyone to participate in our financial system.
+Stock Jock - Project Description
+James Crescenzi, Yujun Chen, Harold Hopson (Group 1)
+
+Stock Jock's mission is to democratize finance for all. We believe that everyone should have access to the financial markets, so we’ve built Stock Jock from a perspective that makes the idea of investing friendly, approachable, and understandable for newcomers and experts alike. Our goal is to build a product that provides everyone with access to the financial markets, not just the wealthy. The creation of Stock Jock hopes to leverage technology in such a way as to  encourage everyone to participate in our financial system.
