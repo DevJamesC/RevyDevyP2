@@ -30,15 +30,15 @@ namespace StockJocky.Client.Controllers
         }
 
 
-            [HttpPost]
-        public IActionResult Authenticate(UserViewModel userViewModel)
+            
+        public IActionResult AuthenticateUser(UserViewModel userViewModel)
         {
             if (ModelState.IsValid)
             {
                 //perform some logic in domain to confirm user exists and get the relevent info
                 if (true) //if user exists
                 {
-
+                    userViewModel.User.Username=userViewModel.UserName;
                     //remove once stock getting logic is implimented
                     userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", Price = 1, PercentChange = .1, Name = "Test One" });
                     userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", Price = 2, PercentChange = .2, Name = "Test Two" });
@@ -61,6 +61,7 @@ namespace StockJocky.Client.Controllers
         public IActionResult AddStock(UserViewModel userViewModel)
         {
             //perform logic to find SymbolAdd as a stock, and add it to User's Stocklist
+            userViewModel.User.Username=userViewModel.UserName;
             return View("StockList",userViewModel);
         }
 

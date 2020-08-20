@@ -1,5 +1,4 @@
-@using StockJocky.Client.Models;
-@model UserViewModel
+@model StockJocky.Client.Models.UserViewModel
 
 <h2>@Model.User.Username 's Stocklist</h2>
 
@@ -27,6 +26,7 @@
 
 <form method="GET" action="~/Home/AddStock">
 @Html.HiddenFor(m => m.SymbolAdd)
+@Html.HiddenFor(m => m.UserName)
 @Html.HiddenFor(m => m.User)
 @Html.HiddenFor(m => m.User.Username)
 @Html.HiddenFor(m => m.User.Stocks)
@@ -42,7 +42,7 @@
 }
 <br><br>
 <label for="addStock">Find Symbol</label>
-<input type="text" id="addStock" name="addStock" asp-for="@Model.SymbolAdd">
+<input type="text" id="addStock" asp-for="@Model.SymbolAdd">
 
 <button type="submit">Add Symbol</button>
 </form>
