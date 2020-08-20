@@ -3,13 +3,13 @@ jobs:
       runs-on: ubuntu-20.04
       steps:
         - uses: actions/checkout@v2.3.1
-        - run: dotnet build # compile
+        - run: dotnet build
     
     test:
       runs-on: ubuntu-20.04
       steps:
         - uses: actions/checkout@v2.3.1
-        - run: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover # unit testing
+        - run: dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover
   
     analyze:
       needs: [build, test]
@@ -17,12 +17,12 @@ jobs:
       steps:
         - uses: actions/checkout@v2.3.1
         - run: git fetch --unshallow
-        # - run: dotnet tool install --global dotnet-sonarscanner
-        # - run: | # multiline value with each line ending with a newline character \n
-            # dotnet sonarscanner begin -o:'{ configure owner }' -k:'{ configure key }' -d:sonar.login='{ configure login cred }' -d:sonar.host.url='https://sonarcloud.io/'
-            # dotnet build
-            # dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover --logger trx
-            # dotnet sonarscanner end -d:sonar.login='{ configure login cred }'
+        - run: dotnet tool install --global dotnet-sonarscanner
+        - run: | 
+            dotnet sonarscanner begin -o:'droptophop' -k:'droptophop_RevyDevyP2' -d:sonar.login="d1eeb6dbaaba45e39a73bfe797967c066d30fa8a" -d:sonar.host.url='https://sonarcloud.io/'
+            dotnet build
+            dotnet test -p:CollectCoverage=true -p:CoverletOutputFormat=opencover --logger trx
+            dotnet sonarscanner end -d:sonar.login='d1eeb6dbaaba45e39a73bfe797967c066d30fa8a'
           env: 
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     # package:
