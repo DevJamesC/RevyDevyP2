@@ -10,15 +10,15 @@ namespace StockJocky.Testing
     {
      StockFactory sf = new StockFactory();
 
-        [Fact]
-        public async Task FindStock()
-        {
-            ApiHelper.InitializeClient();
+        // [Fact]
+        // public async Task FindStock()
+        // {
+        //     ApiHelper.InitializeClient();
 
-            StockSymbol ss =await sf.FindStock("AMAZON.COM INC", "AMZN");
+        //     StockSymbol ss =await sf.FindStock("AMAZON.COM INC", "AMZN");
 
-            Assert.Equal("AMZN", ss.Symbol);
-        }
+        //     Assert.Equal("AMZN", ss.Symbol);
+        // }
 
         [Fact]
         public async Task StockFactoryDefault()
