@@ -13,12 +13,8 @@ namespace StockJocky.Storing
     protected override void OnModelCreating(ModelBuilder builder)
     {
       builder.Entity<Stock>().HasKey(e => e.Id); //primary constraint
-      builder.Entity<Stock>().Property(e => e.Price).HasColumnType("decimal(10, 2)"); //Decimal Constraint
-	  builder.Entity<Stock>().Property(e => e.PriceChange).HasColumnType("decimal(10, 2)"); 
-      builder.Entity<Stock>().Property(e => e.PercentChange).HasColumnType("double(10, 2)"); 
 	  
-	  builder.Entity<User>().HasKey(e => e.Id);
-	  builder.Entity<User>().Property(e => e.Balance).HasColumnType("decimal(10, 2)");
+  	  builder.Entity<User>().HasKey(e => e.Id);
     }
   }
 }
