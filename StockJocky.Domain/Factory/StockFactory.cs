@@ -1,23 +1,24 @@
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 using StockJocky.Domain.Models;
 
 namespace StockJocky.Domain.Factory
 {
     public class StockFactory
     {
-        public async Task<Stock> LoadStockSymbol()
+        public async Task<StockSymbol> FindStock(string name, string symbol)
         {
-            string url = "https://api.iextrading.com/1.0/ref-data/symbols";
+            string url = "https://api.iextrading.com/1.0/ref-data/symbols"; // Returns a collection of objects.
 
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
             {
                 if (response.IsSuccessStatusCode)
                 {
-                    Stock stock = await response.Content.ReadAsAsync<Stock>();
+                    var json =  await response.Content.ReadAsStreamAsync();
 
-                    return stock;
+                    return new StockSymbol(); //Waiting for a solution.
                 }
                 else
                 {
@@ -26,7 +27,7 @@ namespace StockJocky.Domain.Factory
             }   
         }
 
-        public async Task<Stock> LoadStock() //Default constructor for testing.
+        public async Task<Stock> LoadStock() //Default method for testing. Obselete for implementation.
         {
             string url = "https://cloud.iexapis.com/stable/stock/msft/quote?token=pk_47017819d55f4fa387ee42458b6a4dd5&symbols=msft";
 
@@ -45,7 +46,7 @@ namespace StockJocky.Domain.Factory
             }
         }
 
-        public async Task<Stock> LoadStock(string stocksymbol)
+        public async Task<Stock> LoadStock(string stocksymbol) //Method with argument for specific symbol.
         {
             string url = "https://cloud.iexapis.com/stable/stock/" + stocksymbol + "/quote?token=pk_47017819d55f4fa387ee42458b6a4dd5&symbols=" + stocksymbol;
 
