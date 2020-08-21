@@ -47,6 +47,8 @@ namespace StockJocky.Client.Controllers
                 if(userViewModel.User==null)
                 {
                     userViewModel.User= new UserFactory().Create();
+                    userViewModel.User.Username=userViewModel.UserName;
+                    
                 }
                 if (userViewModel.User.Stocks == null)
                 {
@@ -54,11 +56,11 @@ namespace StockJocky.Client.Controllers
                 }
 
                 //remove once stock getting logic is implimented
-                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", Price = 1, PercentChange = .1, Name = "Test One" });
-                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", Price = 2, PercentChange = .2, Name = "Test Two" });
-                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", Price = 3, PercentChange = .3, Name = "Test Three" });
-                //get user stocklist stocks, then...
-                return View("StockList", userViewModel);
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", LatestPrice = 1, ChangePercent = .1, CompanyName = "Test One" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", LatestPrice = 2, ChangePercent = .2, CompanyName = "Test Two" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", LatestPrice = 3, ChangePercent = .3, CompanyName = "Test Three" });
+                    //get user stocklist stocks, then...
+                    return View("StockList", userViewModel);
 
 
 
@@ -87,7 +89,18 @@ namespace StockJocky.Client.Controllers
 
         public IActionResult RemoveStock(UserViewModel userViewModel)
         {
-            
+
+            if(userViewModel.User==null)
+                {
+                    userViewModel.User= new UserFactory().Create();
+                    userViewModel.User.Username=userViewModel.UserName;
+                    
+                }
+                if (userViewModel.User.Stocks == null)
+                {
+                    userViewModel.User.Stocks = new List<Stock>();
+                }
+
             return View("StockList", userViewModel);
         }
 
