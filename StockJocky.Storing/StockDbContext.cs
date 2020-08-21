@@ -15,6 +15,7 @@ namespace StockJocky.Storing
       builder.Entity<Stock>().HasKey(e => e.Id); //primary constraint
 	  
   	  builder.Entity<User>().HasKey(e => e.Id);
+      builder.Entity<User>().HasIndex(e => e.Username).IsUnique();
     }
   }
 }
