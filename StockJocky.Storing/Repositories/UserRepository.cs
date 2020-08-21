@@ -13,5 +13,30 @@ namespace StockJocky.Storing.Repositories
 		{
       		_db = context;
     	}
+
+		public User LoginUser(string username, string password)
+		{
+			var user = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+			if (user.Username == username && user.Password == password)
+			{
+				return user;
+			}
+			else
+			{
+				AddUser(username, password);
+				var newuser = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
+				return newuser;
+			}
+		}
+
+		public void AddUser(string username, string password)
+		{
+			User user = new User();
+			user.Username = username;
+			user.Password = password;
+
+			_db.Users.Add(user);
+			_db.SaveChanges();
+		}
 	}
 }

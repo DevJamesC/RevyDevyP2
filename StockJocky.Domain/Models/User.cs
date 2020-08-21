@@ -17,5 +17,21 @@ namespace StockJocky.Domain.Models
 		{
 			
 		}
+
+		public void AddStock(Stock stock)
+		{
+			if(!(Stocks.Exists(s => s.Symbol == stock.Symbol))) //If doesn't exist, add stock to list.
+			{
+				Stocks.Add(stock);
+			}
+		}
+
+		public void RemoveStock(Stock stock)
+		{
+			if(Stocks.Exists(s => s.Symbol == stock.Symbol)) //If does exist, remove stock from list.
+			{
+				Stocks.Remove(stock);
+			}
+		}
 	}
 }
