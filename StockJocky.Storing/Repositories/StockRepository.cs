@@ -13,5 +13,27 @@ namespace StockJocky.Storing.Repositories
 		{
       		_db = context;
     	}
+
+		public void AddStock(User user, Stock stock)
+		{
+			var newUser = _db.Users.FirstOrDefault ( u => u.Username == user.Username && u.Password == user.Password);
+			if(newUser != null)
+			{
+				newUser.AddStock(stock);
+				_db.Users.Update(newUser);
+				_db.SaveChanges();
+			}
+		}
+
+		public void RemoveStock(User user, Stock stock)
+		{
+			var newUser = _db.Users.FirstOrDefault ( u => u.Username == user.Username && u.Password == user.Password);
+			if(newUser != null)
+			{
+				newUser.RemoveStock(stock);
+				_db.Users.Update(newUser);
+				_db.SaveChanges();
+			}
+		}
 	}
 }
