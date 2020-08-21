@@ -1,6 +1,42 @@
+@model StockJocky.Client.Models.UserViewModel
 
-<h2>StockList</h2>
+<h2>@Model.User.Username 's Stocklist</h2>
 
+<table id="stocks">
+  <tr>
+    <th>Company</th>
+    <th>Symbol</th>
+    <th>Price</th>
+    <th>Price Change</th>
+    <th>Percent Change</th>
+  </tr>
+  
+
+@for (int i = 0; i < @Model.User.Stocks.Count; i++)
+{
+    <tr>
+    <td>@Model.User.Stocks[i].CompanyName</td>
+    <td>@Model.User.Stocks[i].Symbol</td>
+    <td>@Model.User.Stocks[i].LatestPrice</td>
+    <td>@Model.User.Stocks[i].ChangePercent</td>
+    <td>@Model.User.Stocks[i].Change</td>
+  </tr>
+}
+</table>
+
+<form method="GET" action="~/Home/AddStock">
+@Html.HiddenFor(m => m.SymbolAdd)
+@Html.HiddenFor(m => m.UserName)
+
+
+<br><br>
+<label for="addStock">Find Symbol</label>
+<input type="text" id="addStock" asp-for="@Model.SymbolAdd">
+
+<button type="submit">Add Symbol</button>
+</form>
+
+<br><br>
 <form method="GET" action="~/Home/Index">
 
 

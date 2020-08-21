@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using StockJocky.Domain.Factory;
 using StockJocky.Domain.Models;
 
@@ -7,9 +8,12 @@ namespace StockJocky.Client.Models
     {
        public User User { get; set; }
 
+        public string UserName {get; set;}
+       public string SymbolAdd {get; set;}
+
        public UserViewModel()
        {
-           User = new UserFactory().Create();
+           //User = new UserFactory().Create();
        }
 
        public UserViewModel(User user)

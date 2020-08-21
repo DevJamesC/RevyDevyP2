@@ -1,13 +1,33 @@
-﻿
+﻿@model StockJocky.Client.Models.UserViewModel
+
 <h2>Login</h2>
-<form method="GET" action="~/Home/StockList">
+<form method="post" asp-controller="Home" asp-action="AuthenticateUser" >
+@Html.HiddenFor(m => m.User)
+@Html.HiddenFor(m => m.User.Username)
+@Html.HiddenFor(m => m.User.Stocks)
+@for (int i = 0; i < @Model.User.Stocks.Count; i++)
+{
+    @Html.HiddenFor(m => m.User.Stocks[i])
+    @Html.HiddenFor(m => m.User.Stocks[i].CompanyName)
+    @Html.HiddenFor(m => m.User.Stocks[i].ChangePercent)
+    @Html.HiddenFor(m => m.User.Stocks[i].LatestPrice)
+    @Html.HiddenFor(m => m.User.Stocks[i].Change)
+    @Html.HiddenFor(m => m.User.Stocks[i].Symbol)
+}
+
+<label for="un" >Username</label>
+<input type="text" id="un" asp-for="UserName" ><br><br>
 
 
-<button type="submit">Login</button>
+<input type="submit" name='Login'>
+
+<br><br>
+
 </form>
-
+@*
 <form method="GET" action="~/Home/Register">
 
 
 <button type="submit">Register</button>
 </form>
+*@
