@@ -11,6 +11,8 @@ namespace StockJocky.Client.Models
         public string UserName {get; set;}
        public string SymbolAdd {get; set;}
 
+       public string SymbolRemove{get; set;}
+
        public UserViewModel()
        {
            //User = new UserFactory().Create();

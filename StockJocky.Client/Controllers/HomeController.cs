@@ -6,50 +6,61 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using StockJocky.Client.Models;
+using StockJocky.Domain.Factory;
 using StockJocky.Domain.Models;
+using StockJocky.Storing;
 
 namespace StockJocky.Client.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly StockDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, StockDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index(UserViewModel userViewModel)
         {
-            //remove once user constructor is in
-            userViewModel.User = new User();
-            userViewModel.User.Stocks = new List<Stock>();
-
-
+            if(userViewModel.User==null)
+            {
+                userViewModel.User= new UserFactory().Create();
+            }
             return View(userViewModel);
         }
 
 
-            
+
         public IActionResult AuthenticateUser(UserViewModel userViewModel)
         {
             if (ModelState.IsValid)
             {
-                //perform some logic in domain to confirm user exists and get the relevent info
-                if (true) //if user exists
+
+
+
+                //userViewModel.User = GetOrAddUserByName(userViewModel.UserName);
+
+                //remove once user constructor is in
+                if(userViewModel.User==null)
                 {
-                    userViewModel.User.Username=userViewModel.UserName;
-                    //remove once stock getting logic is implimented
-                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", Price = 1, PercentChange = .1, Name = "Test One" });
-                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", Price = 2, PercentChange = .2, Name = "Test Two" });
-                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", Price = 3, PercentChange = .3, Name = "Test Three" });
-                    //get user stocklist stocks, then...
-                    return View("StockList", userViewModel);
+                    userViewModel.User= new UserFactory().Create();
                 }
-                else // if user does not exist
+                if (userViewModel.User.Stocks == null)
                 {
-                    return View("Index");
+                    userViewModel.User.Stocks = new List<Stock>();
                 }
+
+                //remove once stock getting logic is implimented
+                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", Price = 1, PercentChange = .1, Name = "Test One" });
+                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", Price = 2, PercentChange = .2, Name = "Test Two" });
+                userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", Price = 3, PercentChange = .3, Name = "Test Three" });
+                //get user stocklist stocks, then...
+                return View("StockList", userViewModel);
+
+
 
             }
             else
@@ -58,11 +69,26 @@ namespace StockJocky.Client.Controllers
             }
         }
 
+
         public IActionResult AddStock(UserViewModel userViewModel)
         {
-            //perform logic to find SymbolAdd as a stock, and add it to User's Stocklist
-            userViewModel.User.Username=userViewModel.UserName;
-            return View("StockList",userViewModel);
+            //if(AddStockToUserByName(userViewModel.UserName,userViewModel.SymbolAdd)!)
+            //{
+                //ability to send some sort of notification "add failed"
+           // }
+
+            AddStockToUserByNameFromAPI(userViewModel.UserName,userViewModel.SymbolAdd);
+
+            // rebuild user
+            userViewModel.User= GetOrAddUserByName(userViewModel.UserName);
+
+            return View("StockList", userViewModel);
+        }
+
+        public IActionResult RemoveStock(UserViewModel userViewModel)
+        {
+            
+            return View("StockList", userViewModel);
         }
 
         public IActionResult Privacy()
@@ -84,6 +110,89 @@ namespace StockJocky.Client.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+
+
+
+
+
+
+               //Gets user from Database (SHOULD BE IN STORING PROJECT, UNDER REPOSITORY)
+        public User GetOrAddUserByName(string name)
+        {
+
+            var user = _db.Users.Where(u => u.Username == name).FirstOrDefault();
+            if (user == null)
+            {
+                user = new User { Username = name };
+                _db.Users.Add(user);
+                _db.SaveChanges();
+            }
+
+            return user;
+        }
+        //Adds Stock to User (from database, no API interaction) (SHOULD BE IN STORING PROJECT, UNDER REPOSITORY)
+        public bool AddStockToUserByName(string name, string symbol)
+        {
+            bool success = false;
+
+            //get a reference to the stock with the target symbol.
+            var stock = _db.Stocks.Where(s => s.Symbol == symbol).FirstOrDefault();
+            //if the stock symbol entered exists, then check if the target user alreadly has a stock with the target symbol
+            if (stock != null)
+            {
+                if (_db.Users.Where(u => u.Username == name).Where(u => u.Stocks.Contains(stock)).FirstOrDefault() == null)
+                {//if the user with the target name does not have a stock with the target symbol, then add the stock to the users stocklist
+
+                    var user = _db.Users.Where(u => u.Username == name).FirstOrDefault();
+                    if (user != null)
+                    {//final check to make sure uer is not null
+
+                        if(user.Stocks==null)
+                        {
+                            user.Stocks=new List<Stock>();
+                        }
+
+                        user.Stocks.Add(stock);
+                        _db.Update(user);
+                        _db.SaveChanges();
+                        success = true;
+                    }
+                }
+            }
+
+
+            return success;
+        }
+
+          public async void AddStockToUserByNameFromAPI(string name, string symbol)
+        {
+
+            //get a reference to the stock with the target symbol.
+            var stock = await new StockFactory().LoadStock();
+
+            //if the stock symbol entered exists, then check if the target user alreadly has a stock with the target symbol
+            if (stock != null)
+            {
+                if (_db.Users.Where(u => u.Username == name).Where(u => u.Stocks.Contains(stock)).FirstOrDefault() == null)
+                {//if the user with the target name does not have a stock with the target symbol, then add the stock to the users stocklist
+
+                    var user = _db.Users.Where(u => u.Username == name).FirstOrDefault();
+                    if (user != null)
+                    {//final check to make sure uer is not null
+
+                        if(user.Stocks==null)
+                        {
+                            user.Stocks=new List<Stock>();
+                        }
+
+                        user.Stocks.Add(stock);
+                        _db.Update(user);
+                        _db.SaveChanges();
+                    }
+                }
+            }
         }
     }
 }
