@@ -12,5 +12,10 @@ namespace StockJocky.Domain.Models
 		public List<Stock> Stocks {get; set;}
 
 		public decimal Balance {get; set;} //To be used if we implement Stock Trading Game feature.
+
+		public User()
+		{
+			
+		}
 	}
 }

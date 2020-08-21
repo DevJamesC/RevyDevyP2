@@ -27,10 +27,10 @@ namespace StockJocky.Client
         {
             services.AddControllersWithViews();
 
-             services.AddDbContext<StockDbContext>(options =>
+            services.AddDbContext<StockDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("mssql"));
-                //can also use Configuration["ConnectionStrings:mssql"]
+              options.UseSqlServer(Configuration.GetConnectionString("mssql"));
+
             });
         }
 

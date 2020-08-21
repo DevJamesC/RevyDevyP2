@@ -46,7 +46,16 @@ namespace StockJocky.Client.Controllers
                 //remove once user constructor is in
                 if(userViewModel.User==null)
                 {
+
                     userViewModel.User= new UserFactory().Create();
+
+                    //remove once stock getting logic is implimented
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst1", LatestPrice = 1, ChangePercent = .1, CompanyName = "Test One" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst2", LatestPrice = 2, ChangePercent = .2, CompanyName = "Test Two" });
+                    userViewModel.User.Stocks.Add(new Stock() { Symbol = "tst3", LatestPrice = 3, ChangePercent = .3, CompanyName = "Test Three" });
+                    //get user stocklist stocks, then...
+                    return View("StockList", userViewModel);
+
                 }
                 if (userViewModel.User.Stocks == null)
                 {
