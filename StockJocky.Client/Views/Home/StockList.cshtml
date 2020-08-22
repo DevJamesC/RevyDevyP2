@@ -17,9 +17,9 @@
     <tr style="border-bottom: 1px solid #ddd;">
     <td>@Model.User.Stocks[i].CompanyName</td>
     <td>@Model.User.Stocks[i].Symbol</td>
-    <td>@Model.User.Stocks[i].LatestPrice</td>
-    <td>@Model.User.Stocks[i].ChangePercent</td>
-    <td>@Model.User.Stocks[i].Change</td>
+    <td>$@Model.User.Stocks[i].LatestPrice</td>
+    <td>$@Model.User.Stocks[i].Change</td>
+    <td>@Model.User.Stocks[i].ChangePercent%</td>
      <td>
         <form method="GET" action="~/Home/RemoveStock">
 
