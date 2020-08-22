@@ -53,15 +53,12 @@ namespace StockJocky.Client.Controllers
                             //check to make sure a user was returned from _userRepo.LoginUser
                     if(userViewModel.User!=null)
                     {
-                            //check to make sure user has a non-null stocklist
-                        if(userViewModel.User.Stocks==null)
-                        {
-                            userViewModel.User.Stocks=new List<Stock>();
-                        }
+
                             //create a tempstocklist to hold information while the original stocklist is iterated over
                         var tempStockList= new List<Stock>();
 
                                 //iterate over the stocklist to get the most recent stock info, putting the new info in tempStockList
+                                ApiHelper.InitializeClient();
                         foreach (var stock in userViewModel.User.Stocks)
                         {
                             var s= _stockFactory.LoadStock(stock.Symbol).GetAwaiter().GetResult();
@@ -94,6 +91,9 @@ namespace StockJocky.Client.Controllers
                    //check to make sure a user was returned from _userRepo.LoginUser
                     if(User!=null)
                     {
+
+                        ApiHelper.InitializeClient();
+
                         var s =  _stockFactory.LoadStock(userViewModel.SymbolAdd).GetAwaiter().GetResult();
 
                         _stockRepository.AddStock(user,s);
@@ -113,6 +113,7 @@ namespace StockJocky.Client.Controllers
                    //check to make sure a user was returned from _userRepo.LoginUser
                     if(userViewModel.User!=null)
                     {
+                        ApiHelper.InitializeClient();
                         var s = _stockFactory.LoadStock(userViewModel.SymbolRemove).GetAwaiter().GetResult();
                          _stockRepository.RemoveStock(user,s);
 
