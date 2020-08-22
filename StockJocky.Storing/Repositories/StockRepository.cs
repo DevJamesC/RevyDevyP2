@@ -16,7 +16,9 @@ namespace StockJocky.Storing.Repositories
 
 		public void AddStock(User user, Stock stock)
 		{
-			var newUser = _db.Users.FirstOrDefault ( u => u.Username == user.Username && u.Password == user.Password);
+			UserRepository ur = new UserRepository(_db);
+			var newUser = ur.LoginUser(user.Username, user.Password);
+			
 			if(newUser != null)
 			{
 				newUser.AddStock(stock);
@@ -27,11 +29,17 @@ namespace StockJocky.Storing.Repositories
 
 		public void RemoveStock(User user, Stock stock)
 		{
-			var newUser = _db.Users.FirstOrDefault ( u => u.Username == user.Username && u.Password == user.Password);
+			UserRepository ur = new UserRepository(_db);
+			var newUser = ur.LoginUser(user.Username, user.Password);
+
 			if(newUser != null)
 			{
-				newUser.RemoveStock(stock);
-				_db.Users.Update(newUser);
+				// newUser.RemoveStock(stock);
+				// _db.Users.Update(newUser);     
+				// Only remove reference, does not remove data entry.
+
+				var StockForRemoval = _db.Stocks.FirstOrDefault(s => s.Symbol == stock.Symbol && s.Userid.Id == user.Id);
+				_db.Stocks.Remove(StockForRemoval);
 				_db.SaveChanges();
 			}
 		}
