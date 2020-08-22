@@ -36,7 +36,8 @@ namespace StockJocky.Client.Controllers
 
         public IActionResult Index(UserViewModel userViewModel)
         {
-            
+            userViewModel.UserName="";
+            userViewModel.Password="";
             return View(userViewModel);
         }
 
@@ -47,7 +48,7 @@ namespace StockJocky.Client.Controllers
             if (ModelState.IsValid)
             {
                     //get user if exists, otherwise add a new user
-                userViewModel.User = _userRepo.LoginUser(userViewModel.UserName,"");
+                userViewModel.User = _userRepo.LoginUser(userViewModel.UserName,userViewModel.Password);
 
                             //check to make sure a user was returned from _userRepo.LoginUser
                     if(userViewModel.User!=null)
@@ -88,30 +89,32 @@ namespace StockJocky.Client.Controllers
 
         public IActionResult AddStock(UserViewModel userViewModel)
         {
-                var user = _userRepo.LoginUser(userViewModel.UserName,"");
+                var user = _userRepo.LoginUser(userViewModel.UserName,userViewModel.Password);
 
                    //check to make sure a user was returned from _userRepo.LoginUser
-                    if(userViewModel.User!=null)
+                    if(User!=null)
                     {
-                        var s = _stockFactory.LoadStock(userViewModel.SymbolAdd).GetAwaiter().GetResult();
-                        user.AddStock(s);
+                        var s =  _stockFactory.LoadStock(userViewModel.SymbolAdd).GetAwaiter().GetResult();
 
+                        _stockRepository.AddStock(user,s);
+
+                        
                        return AuthenticateUser(userViewModel);
                     }
 
-            return View("StockList", userViewModel);
+            return View("Index");
         }
 
         public IActionResult RemoveStock(UserViewModel userViewModel)
         {
 
-            var user = _userRepo.LoginUser(userViewModel.UserName,"");
+            var user = _userRepo.LoginUser(userViewModel.UserName,userViewModel.Password);
 
                    //check to make sure a user was returned from _userRepo.LoginUser
                     if(userViewModel.User!=null)
                     {
                         var s = _stockFactory.LoadStock(userViewModel.SymbolRemove).GetAwaiter().GetResult();
-                        user.AddStock(s);
+                         _stockRepository.RemoveStock(user,s);
 
                        return AuthenticateUser(userViewModel);
                     }

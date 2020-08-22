@@ -9,6 +9,7 @@ namespace StockJocky.Client.Models
        public User User { get; set; }
 
         public string UserName {get; set;}
+        public string Password { get; set; }
        public string SymbolAdd {get; set;}
 
        public string SymbolRemove{get; set;}
@@ -16,11 +17,6 @@ namespace StockJocky.Client.Models
        public UserViewModel()
        {
            //User = new UserFactory().Create();
-       }
-
-       public UserViewModel(User user)
-       {
-           User = user;
        }
     }
 }

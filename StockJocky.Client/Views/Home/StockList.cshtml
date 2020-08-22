@@ -23,8 +23,8 @@
      <td>
         <form method="GET" action="~/Home/RemoveStock">
 
-            @Html.HiddenFor(m => m.SymbolAdd)
             @Html.HiddenFor(m => m.UserName)
+            @Html.HiddenFor(m => m.Password)
 
             <input type="hidden" asp-for="@Model.SymbolRemove" value="@Model.User.Stocks[i].Symbol">
             <input type="submit" value="X" style="color:red">
@@ -35,8 +35,9 @@
 </table>
 
 <form method="GET" action="~/Home/AddStock">
-@Html.HiddenFor(m => m.SymbolAdd)
-@Html.HiddenFor(m => m.UserName)
+
+            @Html.HiddenFor(m => m.UserName)
+            @Html.HiddenFor(m => m.Password)
 
 
 <br><br>
