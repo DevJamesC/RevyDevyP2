@@ -69,10 +69,10 @@ namespace StockJocky.Testing
 			sr.AddStock(user, stock); //sut, Add Stock
 
 			var newuser = ur.LoginUser("testuser", "p123");
-			var newstock = newuser.Stocks.Find(s => s.Symbol == "amzn");
+			var newstock = newuser.Stocks.Find(s => s.Symbol == "AMZN");
 			
 
-			Assert.Equal(newstock.Symbol, "amzn");
+			Assert.Equal(newstock.Symbol, "AMZN");
 		}
 
 		[Fact]
@@ -90,7 +90,7 @@ namespace StockJocky.Testing
 
 			var newuser = ur.LoginUser("testuser", "p123");
 			sr.RemoveStock(newuser, stock);
-			var newstock = newuser.Stocks.Find(s => s.Symbol == "amzn");
+			var newstock = newuser.Stocks.Find(s => s.Symbol == "AMZN");
 			Assert.Null(newstock);
 		}
 	}	

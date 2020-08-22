@@ -9,7 +9,7 @@ namespace StockJocky.Domain.Models
 
 		public string Password {get; set;}
 
-		public List<Stock> Stocks {get; set;}
+		public List<Stock> Stocks = new List<Stock>();
 
 		public decimal Balance {get; set;} //To be used if we implement Stock Trading Game feature.
 
