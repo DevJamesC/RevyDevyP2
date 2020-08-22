@@ -111,7 +111,7 @@ namespace StockJocky.Client.Controllers
             var user = _userRepo.LoginUser(userViewModel.UserName,userViewModel.Password);
 
                    //check to make sure a user was returned from _userRepo.LoginUser
-                    if(userViewModel.User!=null)
+                    if(User!=null)
                     {
                         ApiHelper.InitializeClient();
                         var s = _stockFactory.LoadStock(userViewModel.SymbolRemove).GetAwaiter().GetResult();
