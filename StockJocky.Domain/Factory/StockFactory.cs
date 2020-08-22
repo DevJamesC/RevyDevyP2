@@ -1,6 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using StockJocky.Domain.Models;
 
@@ -10,21 +12,19 @@ namespace StockJocky.Domain.Factory
     {
         public async Task<StockSymbol> FindStock(string name, string symbol)
         {
-            string url = "https://api.iextrading.com/1.0/ref-data/symbols"; // Returns a collection of objects.
+            List<StockSymbol> stockList = await LoadSymbols();
 
-            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
+            StockSymbol stockSymbol = new StockSymbol();
+
+            foreach (StockSymbol stockItem in stockList)
             {
-                if (response.IsSuccessStatusCode)
+                if(stockItem.Name == name || stockItem.Symbol == symbol)
                 {
-                    var json =  await response.Content.ReadAsStreamAsync();
-
-                    return new StockSymbol(); //Waiting for a solution.
+                    stockSymbol = stockItem;
                 }
-                else
-                {
-                    throw new Exception(response.ReasonPhrase);
-                }
-            }   
+            }
+            
+            return stockSymbol; 
         }
 
         public async Task<Stock> LoadStock() //Default method for testing. Obselete for implementation.
@@ -57,6 +57,27 @@ namespace StockJocky.Domain.Factory
                     Stock stock = await response.Content.ReadAsAsync<Stock>();
 
                     return stock;
+                }
+                else
+                {
+                    throw new Exception(response.ReasonPhrase);
+                }
+            }
+        }
+
+        public async Task<List<StockSymbol>> LoadSymbols() // Retrieves an array of all stock symbols from IEX api
+        {
+            string url = "https://cloud.iexapis.com/stable/ref-data/symbols?token=pk_47017819d55f4fa387ee42458b6a4dd5";
+
+            using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    JArray stockList = await response.Content.ReadAsAsync<JArray>();
+
+                    List<StockSymbol> newStockList = stockList.ToObject<List<StockSymbol>>();
+
+                    return newStockList;
                 }
                 else
                 {

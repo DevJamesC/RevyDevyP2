@@ -17,16 +17,17 @@ namespace StockJocky.Storing.Repositories
 		public User LoginUser(string username, string password)
 		{
 			var user = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-			if (user.Username == username && user.Password == password)
-			{
-				return user;
-			}
-			else
+			
+			if (user == null)
 			{
 				AddUser(username, password);
 				var newuser = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 				return newuser;
 			}
+			else 
+			{
+				return user;
+			}		
 		}
 
 		public void AddUser(string username, string password)
