@@ -14,18 +14,23 @@ namespace StockJocky.Storing.Repositories
       		_db = context;
     	}
 
-		public User LoginUser(string username, string password)
+		public User LoginUser(string username, string password) //General Purpose to get user information or register.
 		{
 			var user = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
-			
-			if (user == null)
+			if (user == null) //If user does not exist.
 			{
 				AddUser(username, password);
 				var newuser = _db.Users.FirstOrDefault(u => u.Username == username && u.Password == password);
 				return newuser;
 			}
-			else 
+			else //User exist
 			{
+				List<Stock> stocks = new List<Stock>();
+				stocks = _db.Stocks.Where(s => s.Userid == user).ToList();
+				if (stocks != null) //User has stocks .
+				{
+					user.Stocks = stocks; //Load user stocks.
+				}
 				return user;
 			}		
 		}

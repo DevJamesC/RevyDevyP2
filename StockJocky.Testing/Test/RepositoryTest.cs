@@ -51,8 +51,10 @@ namespace StockJocky.Testing
 			var sut = new UserRepository(init);
 			var UserToRemove = sut.LoginUser("testuser", "p123");
 			init.Users.Remove(UserToRemove);
-			var actual = sut.LoginUser("testuser", "p123"); //Add if missing and return after adding.
-            Assert.Equal("testuser", actual.Username);
+			init.SaveChanges(); //Delete current test user.
+
+			var actual = sut.LoginUser("testuser", "p123"); //Since testuser does not exist, it will be created.
+            Assert.Equal("testuser", actual.Username); //Test to see if user is created.
         }
 
 		[Fact]
@@ -86,10 +88,12 @@ namespace StockJocky.Testing
 
 			var user = ur.LoginUser("testuser", "p123");
 			Stock stock = await sf.LoadStock("amzn");
-			sr.AddStock(user, stock); //sut, Add Stock
+			sr.AddStock(user, stock); 
 
 			var newuser = ur.LoginUser("testuser", "p123");
 			sr.RemoveStock(newuser, stock);
+
+			newuser = ur.LoginUser("testuser", "p123");
 			var newstock = newuser.Stocks.Find(s => s.Symbol == "AMZN");
 			Assert.Null(newstock);
 		}
