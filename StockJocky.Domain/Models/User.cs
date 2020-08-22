@@ -30,7 +30,8 @@ namespace StockJocky.Domain.Models
 		{
 			if(Stocks.Exists(s => s.Symbol == stock.Symbol)) //If does exist, remove stock from list.
 			{
-				Stocks.Remove(stock);
+				var StockToRemove = Stocks.Find(s => s.Symbol == stock.Symbol);
+				Stocks.Remove(StockToRemove);
 			}
 		}
 	}

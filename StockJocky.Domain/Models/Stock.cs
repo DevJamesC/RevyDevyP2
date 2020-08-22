@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace StockJocky.Domain.Models
 {
 	public class Stock 
@@ -14,6 +16,9 @@ namespace StockJocky.Domain.Models
 		public double ChangePercent {get; set;}
 
 		public int Quantity {get; set;} //To be used if we implement Stock Trading Game feature. 
+
+		[ForeignKey("UserId")] //This might not be even necessary. Gotta love Azure SQL DB not telling us that UserId is a foreign key.
+		public User Userid {get; set;}
 
 		public Stock() 
 		{

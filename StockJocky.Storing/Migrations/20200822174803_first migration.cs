@@ -27,11 +27,11 @@ namespace StockJocky.Storing.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(nullable: true),
+                    CompanyName = table.Column<string>(nullable: true),
                     Symbol = table.Column<string>(nullable: true),
-                    Price = table.Column<decimal>(nullable: false),
-                    PriceChange = table.Column<decimal>(nullable: false),
-                    PercentChange = table.Column<double>(nullable: false),
+                    LatestPrice = table.Column<decimal>(nullable: false),
+                    Change = table.Column<decimal>(nullable: false),
+                    ChangePercent = table.Column<double>(nullable: false),
                     Quantity = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: true)
                 },
@@ -50,6 +50,13 @@ namespace StockJocky.Storing.Migrations
                 name: "IX_Stocks_UserId",
                 table: "Stocks",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Username",
+                table: "Users",
+                column: "Username",
+                unique: true,
+                filter: "[Username] IS NOT NULL");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

@@ -81,7 +81,7 @@ namespace StockJocky.Storing.Migrations
 
             modelBuilder.Entity("StockJocky.Domain.Models.Stock", b =>
                 {
-                    b.HasOne("StockJocky.Domain.Models.User", null)
+                    b.HasOne("StockJocky.Domain.Models.User", "Userid")
                         .WithMany("Stocks")
                         .HasForeignKey("UserId");
                 });
