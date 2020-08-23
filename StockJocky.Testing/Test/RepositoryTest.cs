@@ -19,21 +19,21 @@ namespace StockJocky.Testing
 			return new StockDbContext(OptionsBuilder.Options);
 		}
 
-		// [Fact]
-        // public void StockRepoTest()
-        // {
-        //     var init =  InitDbContext();
-		// 	var sut = new StockRepository(init);
-        //     Assert.NotNull(sut);
-        // }
+		[Fact]
+        public void StockRepoTest()
+        {
+            var init =  InitDbContext();
+			var sut = new StockRepository(init);
+            Assert.NotNull(sut);
+        }
 
-		// [Fact]
-        // public void UserRepoTest()
-        // {
-        //     var init =  InitDbContext();
-		// 	var sut = new UserRepository(init);
-        //     Assert.NotNull(sut);
-        // }
+		[Fact]
+        public void UserRepoTest()
+        {
+            var init =  InitDbContext();
+			var sut = new UserRepository(init);
+            Assert.NotNull(sut);
+        }
 
 		// [Fact]
         // public void LoginUserTest()
