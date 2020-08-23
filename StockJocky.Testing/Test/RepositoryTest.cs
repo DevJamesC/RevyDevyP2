@@ -74,7 +74,7 @@ namespace StockJocky.Testing
 			var newstock = newuser.Stocks.Find(s => s.Symbol == "AMZN");
 			
 
-			Assert.Equal(newstock.Symbol, "AMZN");
+			Assert.Equal("AMZN", newstock.Symbol);
 		}
 
 		[Fact]
