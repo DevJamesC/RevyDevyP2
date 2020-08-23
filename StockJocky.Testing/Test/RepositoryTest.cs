@@ -49,7 +49,9 @@ namespace StockJocky.Testing
         // {
         //     var init =  InitDbContext();
 		// 	var sut = new UserRepository(init);
-		// 	var UserToRemove = sut.LoginUser("testuser", "p123"); //
+
+		// 	var UserToRemove = sut.LoginUser("testuser", "p123");
+
 		// 	init.Users.Remove(UserToRemove);
 		// 	init.SaveChanges(); //Delete current test user.
 
